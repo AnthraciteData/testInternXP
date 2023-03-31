@@ -20,8 +20,6 @@ const options = {
   return dataPromise
 }
 
-
-
 const cardContainer = document.getElementById("card-container");
 const loader = document.getElementById("loader");
 const results = document.getElementById("results");
