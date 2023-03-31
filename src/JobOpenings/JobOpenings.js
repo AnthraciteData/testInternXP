@@ -28,7 +28,7 @@ const loader = document.getElementById("loader");
 const results = document.getElementById("results");
 
 var cardLimit = 10;
-const cardIncrease = 3;
+const cardIncrease = 2;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
 let currentPage = 1;
 
