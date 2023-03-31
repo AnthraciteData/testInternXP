@@ -22,3 +22,9 @@ window.onscroll = () => {
 window.toStudySpace = function () {
     location.href = "../studySpace/study-space";
 }
+
+window.jobOpp = function (){
+
+    location.href = '/src/JobOpenings/JobOpenings';
+
+}
