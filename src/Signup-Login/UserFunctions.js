@@ -20,8 +20,9 @@ window.login = function (){
     // Signed in 
     const user = userCredential.user;
 
-    location.href = './src/resetPassword/resetPassword';
+    console.log("skjdksj")
 
+    location.href = './src/homePage/homePage';
     
   })
   .catch((error) => {
@@ -50,7 +51,7 @@ window.register = function(){
       const user = userCredential.user;
       console.log(user.email);
       alert("Your account has been created. Welcome to InternXP!");
-      location.href = "./src/homePage/homePage";
+      location.href = "/src/homePage/homePage";
 
       
     })
