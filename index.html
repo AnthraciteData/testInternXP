@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS source for signup/login screen -->
+    <link rel="stylesheet" type="text/css" href="/src/Signup-Login/signup-login.css" />
+    <!-- JS script for main content -->
+    <!-- <script type="text/javascript" src="signup-login.js"></script> -->
+    <!-- InternXP favicon -->
+    <link rel="icon" type="image/x-icon" href= "./src/images/InternXP Favicon.png">
+    <title>InternXP - Log In or Sign Up</title>
+</head>
+
+<body>
+    <!-- InternXP logo & subtitle -->
+    <div class="internxp-logo">
+        <img src="./src/images/InternXP Logo.png">
+        <p>The ultimate resource hub for CS students at CSULB.</p>
+    </div>
+    <!-- Log In & Sign Up section -->
+    <div class="box">
+        <div class="form">
+            <!-- Bar that toggles between login and signup forms -->
+            <div class="form-sel-box">
+                <div id="button-bar"></div>
+                <!-- Button to show form for login to InternXP -->
+                <button type="button" class="toggle-btn" onclick="showLogin()">Log In</button> 
+                <!-- Button to show form for new InternXP account creation  -->
+                <button type="button" class="toggle-btn" onclick="showSignUp()">Sign Up</button>
+            </div>
+            <!-- Log In form -->
+            <form id="login" class="usrLogin">
+                <input type="text" id = "email" class="input-field" placeholder="Email" required>
+                <input type="password" id = "password" class="input-field" placeholder="Password" required>
+                <button type="button" onclick = "login()" class="submit-btn">Login</button>
+                <button type="button" id="forgot-pw" onclick="toResetPage()">Forgot password?</button>
+                <span></span>
+            </form>
+            <!-- Sign Up form -->
+            <form id="signup" class="usrSignup">
+                <input type="text" id = "name" class="input-field" placeholder="First & Last Name"required>
+                <input type="text" id = "userName" class="input-field" placeholder="Username"required>
+                <input type="email" id = "email" class="input-field" placeholder="Email" required>
+                <input type="text" id = "password" class="input-field" placeholder="Password" minlength=5 required>
+                <!-- <select name="year" id="year">
+                    <option value="" disabled selected hidden>Select Year</option>
+                    <option value="1">First Year</option>
+                    <option value="2">Second Year</option>
+                    <option value="3">Third Year</option>
+                    <option value="4">Fourth Year</option>
+                    <option value="5">Fifth Year</option>
+                    <option value="6">Sixth Year</option>
+                    <option value="Grad">Graduate</option>
+                    <option value="Other">Other</option>
+                </select>
+                <input type="checkbox" class="checkbox" required><span>I agree to the terms & conditions</span> -->
+                <button type = "button" class="submit-btn" onclick = "rdAdded() ; register()">Sign Up</button>
+            </form>
+        </div>
+    </div>
+    <script src="./dist/SignupLogin.bundle.js"></script>
+    <script src="./dist/resetPassword.bundle.js"></script>
+</body>
+
+<footer>
+    Have any questions? <a>Contact us!</a>
+</footer>
+
+<!-- Script to change forms when corresponding button is pressed -->
+<script>
+const loginForm = document.getElementById("login");
+const signupForm = document.getElementById("signup");
+const highlight = document.getElementById("button-bar");
+
+function showSignUp() {
+	loginForm.style.left = "-400px";
+	signupForm.style.left = "50px";
+	highlight.style.left = "110px";
+}
+
+function showLogin() {
+    loginForm.style.left = "50px";
+	signupForm.style.left = "450px";
+	highlight.style.left = "0px";
+
+}
+</script>
+
+</html>

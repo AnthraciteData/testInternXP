@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InternXP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="homePage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- InternXP favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/InternXP Favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+</head>
+<body>
+  <!---Nav Bar--->
+  <nav class="navbar">
+    <div class="content">
+      <div class="logo"><a href="homePage"><img id="logo" src="../images/InternXP Logo.png"></a></div>
+      <ul class="menu-list">
+        <div class="icon cancel-btn">
+          <i class="fa fa-times"></i>
+        </div>
+        <li><a href="homePage">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#study">Study Space</a></li>
+        <li><a href="#planner">Class Planner</a></li>
+        <li><a href="#">My Account</a></li>
+      </ul>
+      <div class="icon menu-btn">
+        <i class="fa fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+    <!---Banner--->
+    <div class="banner">
+      <div class="text-box">
+        <h1>All The Academic Help You Need In One Convenient Spot!</h1>
+        <p>Are you having trouble applying for an internship? Are you having trouble improving your resume?<br> You can find just what you need and more here on InternXP! <br> Learn more about our features!</p>
+        <div class="scrolldown" style="--color: skyblue">
+          <div class="chevrons">
+            <div class="chevrondown"></div>
+            <div class="chevrondown"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!---Resources-->
+    <div id ="resources" class = "resources">
+      <h1>Resources We Offer</h1>
+      <p>Whether you're looking to boost your resume, gain valuable work experience through an internship, or secure your first job, we have something for you.</p>
+    <div class="row">
+      <div class="res-col">
+        <h3>Internship Tips</h3>
+        <p>We provide insider information and advice on how to find the best internships, stand out during the application process, and make the most of your internship experience.</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+      </div>
+      <div class="res-col">
+        <h3>Resume Tips</h3>
+        <p>We offer practical tips and guidance on creating a standout resume, highlighting your skills and accomplishments, and making a great first impression with potential employers.</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+      </div>
+      <div class="res-col">
+        <h3>Learning Opportunities</h3>
+        <p>We provide a wealth of information on various learning opportunities, from online courses to workshops and networking events, to help you expand your knowledge and skillset.</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+      </div>
+      <div class="res-col">
+        <h3>Job Openings</h3>
+        <p>We maintain an up-to-date database of job openings, including entry-level positions, internships, and part-time jobs. Our job board is a great resource for anyone looking to start or advance their career.</p>
+        <button class="learn-more">
+          <span class="circle" aria-hidden="true">
+          <span class="icon arrow"></span>
+          </span>
+          <span class="button-text">Learn More</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!---Study Space--->
+  <div id = "study" class = "study-space">
+    <div class = "row">
+      <div class = "study-col">
+        <h1>Utilize Our Interactive Study Space</h1>
+        <p>This space provides you with a chance to concentrate and get work done while also indulging in your love for music and socializing with friends. 
+          You can link up to your Spotify account and listen to your favorite tunes to enhance your study experience. The open and inviting atmosphere makes it easy to connect with friends and work together on group projects, 
+          providing you with the perfect balance of productivity and social interaction. </p>
+          <button class="learn-more" onclick="toStudySpace()"> 
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Try It Out</span>
+          </button>
+      </div>
+      <div class = "study-col">
+        <img src="../images/study-space-stock.jpg">
+      </div>
+    </div>
+  </div>
+
+  <!---Class Planner--->
+  <div id = "planner" class = "class-planner">
+    <div class = "row">
+      <div class = "planner-col">
+        <img src="../images/planner-stock.jpg">
+      </div>
+      <div class = "planner-col">
+        <h1>Plan Next Semester's Classes</h1>
+        <p>This innovative planner not only helps you keep track of your schedule, but it also integrates professor ratings to provide valuable insights into the quality of the course and instructor. With this information, you can make informed decisions about which classes to take and which instructors to seek out.</p>
+          <button class="learn-more">
+            <span class="circle" aria-hidden="true">
+            <span class="icon arrow"></span>
+            </span>
+            <span class="button-text">Try It Out</span>
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <ul>
+      <li><a href="homePage">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#study">Study Space</a></li>
+      <li><a href="#planner">Class Planner</a></li>
+    </ul>
+    <p>&copy; 2023 InternXP</p>
+  </footer>
+  
+
+  <script src="./homePageElements.js"></script>
+</body>
+</html>

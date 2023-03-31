@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS source for new password creation screen -->
+    <link rel="stylesheet" type="text/css" href="./createPWPage.css" />
+    <!-- InternXP favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/InternXP Favicon.png">
+    <title>InternXP - Reset Password</title>
+</head>
+
+<body>
+    <!-- InternXP logo & subtitle -->
+    <div class="internxp-logo">
+        <img src="../images/InternXP Logo.png">
+        <p>The ultimate resource hub for CS students at CSULB.</p>
+    </div>
+    <!-- Password reset section -->
+    <div class="box">
+        <div class="form">
+            <!-- Text instructions -->
+            <div class="text">
+                <h1>Password Reset</h1>
+                <p>Enter new password to regain access to your InternXP account.</p>
+            </div>
+            <!-- New password form -->
+            <form id="search" class="input-group">
+                <input type="text" class="input-field" id="newPW" placeholder="New Password" minlength="5" required>
+                <!-- <input type="password" class="input-field" id="confirmPW" placeholder="Confirm Password" minlength="5" required> -->
+                <button type="button" class="submit-btn" id="updatePW" onclick="resetPass()">Update Password</button>
+                <span></span>
+            </form>
+        </div>
+    </div>
+    <!-- JS script for main content -->
+    <script type="text/javascript" src="../../dist/resetPassword.bundle.js"></script>
+</body>
+
+<footer>
+    Have any questions? <a href="https://github.com/KP0810/InternXP/issues">Contact us!</a>
+</footer>
+
+</html>

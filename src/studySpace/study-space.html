@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="study-space.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Remix icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- InternXP favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/InternXP Favicon.png">
+    <title>InternXP - Study Space</title>
+</head>
+
+<body>
+    <!---Nav Bar--->
+    <nav class="navbar">
+        <div class="content">
+            <div class="logo"><a href="../homePage/homePage"><img id="logo" src="../images/InternXP Logo.png"></a>
+            </div>
+            <ul class="menu-list">
+                <div class="icon cancel-btn">
+                    <i class="fa fa-times"></i>
+                </div>
+                <li><a href="../homePage/homePage">Home</a></li>
+                <li><a href="../homePage/about">About</a></li>
+                <li><a href="../homePage/homePage#resources">Resources</a></li>
+                <li><a href="study-space">Study Space</a></li>
+                <li><a href="../homePage/homePage#planner">Class Planner</a></li>
+                <li><a href="#">My Account</a></li>
+            </ul>
+            <div class="icon menu-btn">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="study-space">
+        <div class="study-space-window" style="display:none">
+            <div class="study-space-content">
+                <h1>Spaces</h1>
+                <p>Click an emoji multiple times to see other backgrounds.</p>
+                <div class="study-space-button-row">
+                    <div class="study-space-button">
+                        <button class="ss-btn" id="beach" title="Beach"></button>
+                        <button class="ss-btn" id="space" title="Space"></button>
+                        <button class="ss-btn" id="lofi" title="Lofi"></button>
+                        <button class="ss-btn" id="cafe" title="Cafe"></button>
+                        <button class="ss-btn" id="nature" title="Nature"></button>
+                    </div>
+                    <div class="study-space-button">
+                        <button class="ss-btn" id="kpop" title="K-Pop"></button>
+                        <button class="ss-btn" id="code" title="Code"></button>
+                        <button class="ss-btn" id="library" title="Library"></button>
+                        <button class="ss-btn" id="city" title="City"></button>
+                        <button class="ss-btn" id="gaming" title="Gaming"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="music-window"></div>
+        <div class="chat-window"></div>
+        <div class="optionsMenu">
+            <button class="btn" id="studySpaceMenu">
+                <i class="ri-dashboard-line"></i>
+            </button>
+            <button class="btn" id="music-player">
+                <i class="ri-music-2-line"></i>
+            </button>
+            <button class="btn" id="chat-window">
+                <i class="ri-question-answer-line"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+<script src="study-space.js"></script>
+
+</html>
