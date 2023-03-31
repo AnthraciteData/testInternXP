@@ -8,7 +8,7 @@ window.backToindex = function(){
 }
 window.toResetPage = function(){
 
-  location.href = '/src/resetPassword/resetPassword';
+  location.href = './src/resetPassword/resetPassword';
 
 }
 
