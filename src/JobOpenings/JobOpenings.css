@@ -1,59 +1,301 @@
-body {
-  font-family: "Roboto", sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
-
-#card-container {
+body{
+  min-height: 100vh;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
+.container {
 
-.card {
-  height: 55vh;
-  width: calc((100% / 3) - 16px);
-  margin: 8px;
-  border-radius: 3px;
-  transition: all 200ms ease-in-out;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  background: #172664;
+  height: 76.8vh;
+  
+  }
+
+  .navbar{
+
+    background: #172664;
+    height: 94px;
+    padding: 25px 0;
+
+  }
+
+  .navbar .content{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1250px;
+    margin: auto;
+    padding: 0px 30px;
+    
+    
+  
+  }
+
+  .navbar .content .menu-list{
+
+    display: inline-flex;
+
+  }
+
+  .navbar .content .menu-list li {
+
+    list-style: none;
+    
+    
+  }
+
+  .navbar .content .menu-list li a{
+
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    text-decoration: none;
+
+  }
+
+  
+  .navbar .content #logo{
+
+    height: 70px;
+
+
+  }
+
+
+  .container .inputs{
+
+  /* border: 5px solid; */
+  width: 20%;
+  /* background: orangered; */
+  height: 76.8vh;
+  border-radius: 25px;
+  border: 5px solid;
+
+   
+
+
+
+  }
+
+  .container .inputs .entries{
+
+    /* border: 1px solid blueviolet; */
+
+    margin-top: 80%;
+  
+  }
+
+  .container .inputs .fname{
+
+    border: 2px solid;
+    background: grey;
+    /* background: red; */
+    text-align: center;
+    align-content: end;
+    margin-left: 8%;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px lightblue;
+
+
+  }
+
+  .container .inputs .lname{
+
+    border: 2px solid;
+    background: grey;
+    text-align: center;
+    align-content: end;
+    margin-left: 8%;
+    border-radius: 25px;
+    box-shadow: 0 4px 10px lightblue;
+
+
+  }
+  .container .inputs #fname{
+
+    border-radius: 25px;
+
+
+  }
+  .container .inputs #lname{
+
+    border-radius: 25px;
+
+
+  }
+  .container .inputs #fname:focus{
+
+    background-color: lightblue;
+
+  }.container .inputs #fname:hover{
+
+    background-color: lightblue;
+
+  }
+
+  .container .inputs #lname:focus{
+
+    background-color: lightblue;
+
+  }
+  .container .inputs #lname:hover{
+
+    background-color: lightblue;
+
+  }
+  
+
+  .container .results{
+
+    width: 80%;
+
+    border: 5px solid;
+
+    overflow: scroll;
+
+    border-radius: 25px;
+
+
+
+  }
+
+  .footer{
+
+    background-color: #172664;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+
+  
+  }
+  .footer ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+  .footer li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+}
+  
+  .footer p {
+      margin-top: 20px;
+      font-size: 14px;
+  }
+  
+  
+  
+  .container .results #card-container{
+
+    display: flex;
+    flex-wrap: wrap;
+    background: #172664;
+    border-radius: 25px;
+
+  }
+
+  .container .results #card-container .card {
+    
+    height: 55vh;
+    width: calc((100% / 3) - 16px);
+    margin: 8px;
+    border-radius: 3px;
+    transition: all 200ms ease-in-out;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    
+
 }
 
-.card:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.container .results #card-container .card:hover{
+
+    box-shadow: 0 4px 10px lightblue;
+
 }
 
-.card-actions {
-  margin: 8px;
-  padding: 16px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.container .results #card-container .card .jobTitle{
+
+  border: 1px solid;
+
+  margin-top: 10%;
+
+  margin-bottom: 10%;
+
+  text-align: center;
+
+
+
+
+}
+.container .results #card-container .card .jobLocation{
+
+  border: 1px solid;
+
+  margin-bottom: 10%;
+
+  text-align: center;
+
+
+
+}
+.container .results #card-container .card .jobDescription{
+
+  border: 1px solid;
+  overflow: scroll;
+  overflow-wrap: anywhere;
+  max-height: 66%;
+    /* word-wrap: break-word; */
+  /* hyphens: auto; */
+
+
+
 }
 
-#loader {
-  display: flex;
-}
+.container .results #loader{
 
-.skeleton-card {
+    display: flex;
+
+} 
+
+.container .results #loader .skeleton-card{
+
   height: 55vh;
   width: calc((100% / 3) - 16px);
   margin: 8px;
   border-radius: 3px;
   transition: all 200ms ease-in-out;
   position: relative;
-  background-color: #eaeaea;
-}
+  background-color: #eaeaea;}
 
-.skeleton-card::after {
+.container .results #loader .skeleton-card::after{
+
   content: "";
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  transform: translateX(-100%);
-  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0.2) 20%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0));
+  transform: translateX(-);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #172664 20%, #172664 60%, #172664 2%);
   animation: load 1s infinite;
+
 }
 
 @keyframes load {
@@ -61,7 +303,6 @@ body {
     transform: translateX(100%);
   }
 }
-
 @media screen and (prefers-reduced-motion: reduce) {
   .skeleton-card::after {
     animation: none;
