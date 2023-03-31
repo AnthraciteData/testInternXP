@@ -3,7 +3,7 @@ import { confirmPasswordReset, getAuth, sendPasswordResetEmail, updatePassword }
 
 window.backToindex = function(){
 
-  location.href = "/";
+  location.href = "/index";
 
 }
 window.toResetPage = function(){
