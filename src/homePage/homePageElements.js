@@ -25,6 +25,6 @@ window.toStudySpace = function () {
 
 window.jobOpp = function (){
 
-    location.href = '/src/JobOpenings/JobOpenings';
+    location.href = '../JobOpenings/JobOpenings';
 
 }
