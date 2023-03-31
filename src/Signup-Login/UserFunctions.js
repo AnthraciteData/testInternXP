@@ -20,7 +20,8 @@ window.login = function (){
     // Signed in 
     const user = userCredential.user;
 
-    location.href = "./src/homePage/homePage";
+    location.href = './src/resetPassword/resetPassword';
+
     
   })
   .catch((error) => {
