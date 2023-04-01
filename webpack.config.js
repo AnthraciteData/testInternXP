@@ -9,7 +9,7 @@ module.exports = {
         resetPassword :"./resetPassword/resetPassword.js",
         homepageElements : "./homePage/homePageElements.js",
         JobOpeings : './JobOpenings/JobOpenings.js',
-        // fireBaseint: "/firebaseInitilization.js"
+        LearningOpp : './LearningOpportunities/LearningOpportunities.js'
     },
     output:{
 

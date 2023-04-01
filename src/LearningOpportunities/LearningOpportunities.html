@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>InternXP</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./LearningOpportunities.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- InternXP favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/InternXP Favicon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+</head>
+<body>
+
+  <div class="navbar">
+    <div class="content">
+      <div class="logo">
+        <a href="homePage">
+          <img id="logo" src="../images/InternXP Logo.png">
+        </a>
+      </div>
+      <ul class="menu-list">
+        <li><a href="homePage">Home</a></li>
+        <li><a href="about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#study">Study Space</a></li>
+        <li><a href="#planner">Class Planner</a></li>
+        <li><a href="#">My Account</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="container" id="container">
+    <div class="inputs">
+      <div class = "entries">
+        <button id = "courses" class="courses">Courses</button>
+        <input type="text" id="courses" name="fname"><br><br>
+
+        <button id = "network"class="network">Networking</button>
+        <input type="text" id="network" ><br><br>
+
+        <button id = "work" class="work">Workshops</button>
+        <input type="text" id="work" ><br><br>
+
+        
+
+      </div>
+    </div>
+    <div class="results" id="results">
+      <div id="card-container">
+      </div>
+      <div id="loader">
+        <div class="skeleton-card"><div>
+          </div>
+        </div>
+        <div class="skeleton-card"></div>
+        <div class="skeleton-card"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "footer">
+    <ul>
+      <li><a href="homePage">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="../homePage/homePage#resources">Resources</a></li>
+      <li><a href="../studySpace/study-space">Study Space</a></li>
+      <li><a href="../homePage/homePage#planner">Class Planner</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+    <p>&copy; 2023 InternXP</p>
+  </div>
+
+
+
+  <!-- <footer>
+    <ul>
+      <li><a href="homePage">Home</a></li>
+      <li><a href="about">About</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#study">Study Space</a></li>
+      <li><a href="#planner">Class Planner</a></li>
+    </ul>
+    <p>&copy; 2023 InternXP</p>
+  </footer> -->
+  
+
+  <script src="../../dist/LearningOpp.bundle.js"></script>
+  <!-- <script src="/dist/testAPI.bundle.js"></script> -->
+  <!-- <script src = "./JobOpenings.js"></script> -->
+  <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+</body>
+</html>
