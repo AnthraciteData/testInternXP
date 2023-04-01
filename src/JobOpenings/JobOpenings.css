@@ -98,13 +98,16 @@ body{
 
     border: 2px solid;
     background: grey;
-    /* background: red; */
     text-align: center;
     align-content: end;
     margin-left: 8%;
     border-radius: 25px;
-    box-shadow: 0 4px 10px lightblue;
+    padding: 10px;
+  }
+  .container .inputs .fname:hover{
 
+
+    background-color: lightblue;
 
   }
 
@@ -123,8 +126,7 @@ body{
   .container .inputs #fname{
 
     border-radius: 25px;
-
-
+    padding: 10px;
   }
   .container .inputs #lname{
 
@@ -153,21 +155,6 @@ body{
 
   }
   
-
-  .container .results{
-
-    width: 80%;
-
-    border: 5px solid;
-
-    overflow: scroll;
-
-    border-radius: 25px;
-
-
-
-  }
-
   .footer{
 
     background-color: #172664;
@@ -198,6 +185,21 @@ body{
       margin-top: 20px;
       font-size: 14px;
   }
+
+  .container .results{
+
+    width: 80%;
+
+    border: 5px solid;
+
+    overflow: scroll;
+
+    border-radius: 25px;
+
+
+
+
+}
   
   
   
@@ -208,6 +210,9 @@ body{
     background: #172664;
     border-radius: 25px;
 
+    /* position: relative; */
+
+
   }
 
   .container .results #card-container .card {
@@ -217,9 +222,7 @@ body{
     margin: 8px;
     border-radius: 3px;
     transition: all 200ms ease-in-out;
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
+    /* position: relative; */
     
 
 }
@@ -244,20 +247,37 @@ body{
 
 
 }
-.container .results #card-container .card .jobLocation{
+.container .results #card-container .card .jobCLocation{
 
   border: 1px solid;
 
-  margin-bottom: 10%;
+  margin-bottom: 0%;
 
   text-align: center;
 
 
 
 }
+.container .results #card-container .card .saveB{
+
+  border: none;
+  background-color: transparent;
+  margin-left: 90%;
+  
+  color:  #172664;
+}
+
+.container .results #card-container .card .saveB:hover{
+
+  box-shadow: 0 4px 10px yellow;
+
+}
+
 .container .results #card-container .card .jobDescription{
 
-  border: 1px solid;
+  margin-top: 1%;
+
+  border: 1px solid red;
   overflow: scroll;
   overflow-wrap: anywhere;
   max-height: 66%;
