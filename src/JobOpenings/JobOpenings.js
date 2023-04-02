@@ -1,24 +1,24 @@
 import axios from 'axios';
 
-const searchButton = document.getElementById("saveB");
+// const searchButton = document.getElementById("saveB");
 
-var options = null;
+// var options = null;
 
-searchButton.addEventListener('click',function(){
+// searchButton.addEventListener('click',function(){
 
-  var userI = document.getElementById("fname").value;
+//   var userI = document.getElementById("fname").value;
 
-  options = {
-  method: 'GET',
-  url: 'https://jsearch.p.rapidapi.com/search',
-  params: {query: userI, page: '10', num_pages: '10',employment_types: 'FULLTIME'},
-  headers: {
-    'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
-    'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
-  }  
-};
-  userI = document.getElementById("fname").value = "";
-  addCards(currentPage);
+//   options = {
+//   method: 'GET',
+//   url: 'https://jsearch.p.rapidapi.com/search',
+//   params: {query: userI, page: '10', num_pages: '10',employment_types: 'FULLTIME'},
+//   headers: {
+//     'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
+//     'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+//   }  
+// };
+//   userI = document.getElementById("fname").value = "";
+//   addCards(currentPage);
   
   //  options = {
   //   method: 'GET',
@@ -29,7 +29,7 @@ searchButton.addEventListener('click',function(){
   //   }
   // };
 
-})
+// })
 
 
 
@@ -43,6 +43,15 @@ searchButton.addEventListener('click',function(){
 //     'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
 //   }
 // };
+
+  const options = {
+    method: 'GET',
+    url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions',
+    headers: {
+      'X-RapidAPI-Key': 'f26fb09eb3msh3d4336d79d9cef6p1d60b9jsnf70a1205ee86',
+      'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
+    }
+  };
 
  let axiosDataPromise = () => {
   // create a promise for the axios request
@@ -155,9 +164,9 @@ const addCards = (pageIndex) => {
     for(let i = startRange ; i <endRange ;i++){
       console.log(i);
 
-      // createCard(data[i]["name"],data[i]["country"],data[i]["id"],data[i]["job_apply_link"]);
+      createCard(data[i]["name"],data[i]["country"],data[i]["id"]);
 
-      createCard(data[i]["job_title"],data[i]["employer_name"],data[i]["job_description"],data[i]["job_apply_link"]);
+      // createCard(data[i]["job_title"],data[i]["employer_name"],data[i]["job_description"],data[i]["job_apply_link"]);
 
     }
 
@@ -198,10 +207,10 @@ const removeInfiniteScroll = () => {
   results.removeEventListener("scroll", handleInfiniteScroll);
 };
 
-// window.onload = function () {
+window.onload = function () {
 
-//   addCards(currentPage);
-// };
+  addCards(currentPage);
+};
 
 results.addEventListener("scroll", handleInfiniteScroll);
 

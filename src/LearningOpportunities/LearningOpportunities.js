@@ -1,26 +1,26 @@
 import axios from 'axios';
 
-const coursesSearch = document.getElementById("courses");
-const networkSearch = document.getElementById("network");
-const work = document.getElementById("work");
+const coursesSearch = document.getElementById("coursesB");
+const networkSearch = document.getElementById("networkB");
+const work = document.getElementById("workB");
 
 var options = null;
 
 coursesSearch.addEventListener('click',function(){
 
-  var courses = document.getElementById("courses").value;
+  var coursesV = document.getElementById("courses").value;
 
   options = {
     method: 'GET',
     url: 'https://duckduckgo8.p.rapidapi.com/',
-    params: {q: 'Resume Tips'},
+    params: {q: coursesV + " Courses Opportunities"},
     headers: {
       'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
       'X-RapidAPI-Host': 'duckduckgo8.p.rapidapi.com'
     }
 };
-courses = document.getElementById("courses").value = "";
-  addCards(currentPage);
+coursesV = document.getElementById("courses").value = "";
+addCards(currentPage);
   
   //  options = {
   //   method: 'GET',
@@ -32,6 +32,43 @@ courses = document.getElementById("courses").value = "";
   // };
 
 })
+networkSearch.addEventListener('click',function(){
+
+    var newtworkV = document.getElementById("network");
+    
+    options = {
+        method: 'GET',
+        url: 'https://duckduckgo8.p.rapidapi.com/',
+        params: {q: newtworkV + "Networking Opportunities"},
+        headers: {
+          'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
+          'X-RapidAPI-Host': 'duckduckgo8.p.rapidapi.com'
+        }
+    };
+
+    newtworkV = document.getElementById("network").value = "";
+    addCards(currentPage);
+})
+work.addEventListener('click',function(){
+
+    var workV = document.getElementById("work");
+
+    options = {
+        method: 'GET',
+        url: 'https://duckduckgo8.p.rapidapi.com/',
+        params: {q: workV + " Workshops Opportunities"},
+        headers: {
+          'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
+          'X-RapidAPI-Host': 'duckduckgo8.p.rapidapi.com'
+        }
+    };
+
+    workV = document.getElementById("work").value = "";
+
+    addCards(currentPage);
+
+})
+
 
 
  let axiosDataPromise = () => {
