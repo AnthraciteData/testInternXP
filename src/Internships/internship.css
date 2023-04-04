@@ -74,7 +74,7 @@ body{
   .container .inputs{
 
   /* border: 5px solid; */
-  width: 21%;
+  width: 20%;
   /* background: orangered; */
   height: 76.8vh;
   border-radius: 25px;
@@ -94,7 +94,7 @@ body{
   
   }
 
-  .container .inputs .courses{
+  .container .inputs .fname{
 
     border: 2px solid;
     background: grey;
@@ -104,28 +104,14 @@ body{
     border-radius: 25px;
     padding: 10px;
   }
-  .container .inputs .courses:hover{
+  .container .inputs .fname:hover{
 
 
     background-color: lightblue;
 
   }
-  .container .inputs #courses{
 
-    border-radius: 25px;
-    padding: 10px;
-  }
-  .container .inputs #courses:focus{
-
-    background-color: lightblue;
-
-  }
-  .container .inputs #courses:hover{
-
-    background-color: lightblue;
-
-  }
-  .container .inputs .network{
+  .container .inputs .lname{
 
     border: 2px solid;
     background: grey;
@@ -133,65 +119,42 @@ body{
     align-content: end;
     margin-left: 8%;
     border-radius: 25px;
-    padding: 10px;
-    margin-left: 0;
+    box-shadow: 0 4px 10px lightblue;
+
+
   }
-  .container .inputs #network{
+  .container .inputs #fname{
 
     border-radius: 25px;
     padding: 10px;
-
   }
-  .container .inputs .network:hover{
-
-    background-color: lightblue;
-
-  }
-  .container .inputs #network:focus{
-
-    background-color: lightblue;
-
-  }
-  .container .inputs #network:hover{
-
-    background-color: lightblue;
-
-  }
-  .container .inputs .work{
-
-    border: 2px solid;
-    background: grey;
-    text-align: center;
-    align-content: end;
-    margin-left: 8%;
-    border-radius: 25px;
-    padding: 10px;
-    margin-left: 0;
-
-  }
-  .container .inputs #work{
+  .container .inputs #lname{
 
     border-radius: 25px;
-    padding: 10px;
+
 
   }
-  .container .inputs .work:hover{
+  .container .inputs #fname:focus{
 
     background-color: lightblue;
 
-  }
-  .container .inputs #work:focus{
-
-    background-color: lightblue;
-
-
-  }
-  .container .inputs #work:hover{
+  }.container .inputs #fname:hover{
 
     background-color: lightblue;
 
   }
 
+  .container .inputs #lname:focus{
+
+    background-color: lightblue;
+
+  }
+  .container .inputs #lname:hover{
+
+    background-color: lightblue;
+
+  }
+  
   .footer{
 
     background-color: #172664;
@@ -225,7 +188,7 @@ body{
 
   .container .results{
 
-    width: 79%;
+    width: 80%;
 
     border: 5px solid;
 
@@ -237,6 +200,8 @@ body{
 
 
 }
+  
+  
   
   .container .results #card-container{
 
@@ -282,7 +247,7 @@ body{
 
 
 }
-/* .container .results #card-container .card .jobCLocation{
+.container .results #card-container .card .jobCLocation{
 
   border: 1px solid;
 
@@ -292,7 +257,7 @@ body{
 
 
 
-} */
+}
 .container .results #card-container .card .saveB{
 
   border: none;

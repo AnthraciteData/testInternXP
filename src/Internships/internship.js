@@ -1,30 +1,9 @@
 import {app} from "../firebaseInitilization";
 import { getDatabase, ref, set } from "firebase/database";
-// import { getAuth, onAuthStateChanged } from "firebase/auth";
-
 
 import axios from 'axios';
 
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     console.log("iushdijhsa ");
-//     // User is signed out
-//     // ...
-//   }
-// });
-
-
-
-
 // const searchButton = document.getElementById("saveB");
-
-
 
 // var options = null;
 
@@ -35,7 +14,7 @@ import axios from 'axios';
 //   options = {
 //   method: 'GET',
 //   url: 'https://jsearch.p.rapidapi.com/search',
-//   params: {query: userI, page: '10', num_pages: '10',employment_types: 'FULLTIME'},
+//   params: {query: userI, page: '10', num_pages: '10',employment_types: 'INTERN'},
 //   headers: {
 //     'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
 //     'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
@@ -72,7 +51,12 @@ function writeData(nameSave,link){
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + "Javier/" + nameSave ),  {url_ : link,priority : false,type_: "Job"});
+  set(ref(db,'savedList/' + nameSave),{
+    url_ : link,
+    priority : false,
+    type_: "Job"
+
+  });
 
 }
 

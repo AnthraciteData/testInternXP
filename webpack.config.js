@@ -9,7 +9,8 @@ module.exports = {
         resetPassword :"./resetPassword/resetPassword.js",
         homepageElements : "./homePage/homePageElements.js",
         JobOpeings : './JobOpenings/JobOpenings.js',
-        LearningOpp : './LearningOpportunities/LearningOpportunities.js'
+        LearningOpp : './LearningOpportunities/LearningOpportunities.js',
+        ResumeTips : './ResumeTips/ResumeTips.js'
     },
     output:{
 

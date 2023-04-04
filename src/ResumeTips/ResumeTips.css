@@ -94,7 +94,7 @@ body{
   
   }
 
-  .container .inputs .courses{
+  .container .inputs .resume{
 
     border: 2px solid;
     background: grey;
@@ -102,30 +102,30 @@ body{
     align-content: end;
     margin-left: 8%;
     border-radius: 25px;
-    padding: 10px;
+    padding: 3px;
   }
-  .container .inputs .courses:hover{
+  .container .inputs .resume:hover{
 
 
     background-color: lightblue;
 
   }
-  .container .inputs #courses{
+  .container .inputs #resume{
 
     border-radius: 25px;
     padding: 10px;
   }
-  .container .inputs #courses:focus{
+  .container .inputs #resume:focus{
 
     background-color: lightblue;
 
   }
-  .container .inputs #courses:hover{
+  .container .inputs #resume:hover{
 
     background-color: lightblue;
 
   }
-  .container .inputs .network{
+  /* .container .inputs .network{
 
     border: 2px solid;
     background: grey;
@@ -190,7 +190,7 @@ body{
 
     background-color: lightblue;
 
-  }
+  } */
 
   .footer{
 

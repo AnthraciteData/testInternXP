@@ -1,10 +1,26 @@
+// import {app} from "../firebaseInitilization";
+// import { getDatabase, ref, set } from "firebase/database";
 import axios from 'axios';
+
+// function writeData(nameSave,link){
+
+//   const db = getDatabase()
+
+//   set(ref(db,'savedList/' + nameSave),{
+//     url_ : link,
+//     priority : false 
+
+//   });
+
+// }
 
 const coursesSearch = document.getElementById("coursesB");
 const networkSearch = document.getElementById("networkB");
 const work = document.getElementById("workB");
 
 var options = null;
+
+let currentPage = 1;
 
 coursesSearch.addEventListener('click',function(){
 
@@ -76,7 +92,7 @@ work.addEventListener('click',function(){
   const promise = axios.request(options);
 
   // using .then, create a new promise which extracts the data
-  const dataPromise = promise.then((response) => response.data.data)
+  const dataPromise = promise.then((response) => response.data.results)
 
   // return it
   return dataPromise
@@ -89,7 +105,7 @@ const results = document.getElementById("results");
 var cardLimit = 100;
 const cardIncrease = 9;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
-let currentPage = 1;
+// let currentPage = 1;
 
 var throttleTimer;
 const throttle = (callback, time) => {
@@ -109,19 +125,19 @@ const getRandomColor = () => {
   return `hsl(${h}deg, 90%, 85%)`;
 };
 
-const createCard = (jobT,jobCN,jobD) => {
+const createCard = (jobT,jobD,jobL) => {
 
   
   const card = document.createElement("div");
 
   const saveB = document.createElement("button");
 
-  // card.addEventListener('click',function(event){
+  card.addEventListener('click',function(event){
 
-  //   // console.log("i am in this bitch");
-  //   location.href = jobLink;
+    // console.log("i am in this bitch");
+    location.href = jobL;
 
-  // })
+  })
 
   //////purnima should look here and add appropriate code
   /// this shoots information to where ever you want
@@ -135,26 +151,24 @@ const createCard = (jobT,jobCN,jobD) => {
   })
   const jobTitle = document.createElement("div");
   // jobTitle.onclick = location.href = '../homePage/homePage.html';
-  const jobCLocation = document.createElement("div");
   const jobDesc = document.createElement("p");
+
 
 
   card.className = "card";
   jobTitle.className = "jobTitle";
-  jobCLocation.className = "jobCLocation";
   jobDesc.className = "jobDescription";
+
   saveB.className = "saveB";
 
   saveB.innerHTML = "Save";
   jobTitle.innerHTML = jobT;
-  jobCLocation.innerHTML = jobCN;
   jobDesc.innerHTML = jobD;
 
   card.style.backgroundColor = getRandomColor();
   cardContainer.appendChild(card);
   card.appendChild(saveB);
   card.appendChild(jobTitle);
-  card.appendChild(jobCLocation);
   card.appendChild(jobDesc);
   
 
@@ -184,7 +198,7 @@ const addCards = (pageIndex) => {
 
       // createCard(data[i]["name"],data[i]["country"],data[i]["id"],data[i]["job_apply_link"]);
 
-      createCard(data[i]["job_title"],data[i]["employer_name"],data[i]["job_description"],data[i]["job_apply_link"]);
+      createCard(data[i]["title"],data[i]["description"],data[i]["url"]);
 
     }
 

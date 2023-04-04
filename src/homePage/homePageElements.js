@@ -28,3 +28,6 @@ window.jobOpp = function (){
     location.href = '../JobOpenings/JobOpenings';
 
 }
+window.resumeT = function(){
+    location.href = '../ResumeTips/ResumeTips.html'
+}
