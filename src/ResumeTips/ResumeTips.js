@@ -2,15 +2,11 @@ import {app} from "../firebaseInitilization";
 import { getDatabase, ref, set } from "firebase/database";
 import axios from 'axios';
 
-function writeData(nameSave,link){
+function writeData(id,nameSave,link){
 
-  const db = getDatabase()
+  const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + nameSave),{
-    url_ : link,
-    priority : false 
-
-  });
+  set(ref(db,'savedList/' + id + "/" + nameSave ),  {url_ : link,priority : false,type_: "resumeTip"});
 
 }
 
@@ -145,7 +141,22 @@ const createCard = (jobT,jobD,jobL) => {
   saveB.addEventListener('click',function(event){
 
 
-    console.log("I am in this bii");
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        writeData(uid,jobT,jobLink);
+        console.log("should have worked");
+
+    
+        // ...
+      } else {
+        console.log("Did not work");
+        // User is signed out
+        // ...
+      }
+    });
 
 
   })

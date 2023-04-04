@@ -5,19 +5,8 @@ import { getDatabase, ref, set } from "firebase/database";
 
 import axios from 'axios';
 
-// const auth = getAuth();
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     // ...
-//   } else {
-//     console.log("iushdijhsa ");
-//     // User is signed out
-//     // ...
-//   }
-// });
+const auth = getAuth();
+
 
 
 
@@ -68,11 +57,11 @@ import axios from 'axios';
 //   }
 // };
 
-function writeData(nameSave,link){
+function writeData(id,nameSave,link){
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + "Javier/" + nameSave ),  {url_ : link,priority : false,type_: "Job"});
+  set(ref(db,'savedList/' + id + "/" + nameSave ),  {url_ : link,priority : false,type_: "Job"});
 
 }
 
@@ -143,8 +132,23 @@ const createCard = (jobT,jobCN,jobD) => {
   saveB.addEventListener('click',function(event){
 
 
-    writeData(jobT,jobCN);
-    console.log("should have worked");
+   
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        writeData(uid,jobT,jobCN);
+        console.log("should have worked");
+
+    
+        // ...
+      } else {
+        console.log("Did not work");
+        // User is signed out
+        // ...
+      }
+    });
 
 
   })
