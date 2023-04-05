@@ -130,18 +130,17 @@ const createCard = (jobT,jobD,jobL) => {
 
   const saveB = document.createElement("button");
 
-  card.addEventListener('click',function(event){
+  // card.addEventListener('click',function(event){
 
-    // console.log("i am in this bitch");
-    location.href = jobL;
+  //   // console.log("i am in this bitch");
+  //   location.href = jobL;
 
-  })
+  // })
 
   //////purnima should look here and add appropriate code
   /// this shoots information to where ever you want
 
   saveB.addEventListener('click',function(event){
-
 
     const auth = getAuth(app);
 
