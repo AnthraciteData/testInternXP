@@ -1,5 +1,5 @@
 import {app} from "../firebaseInitilization";
-import { getDatabase, ref, set } from "firebase/database";
+import { getAuth,getDatabase, ref, set } from "firebase/database";
 import axios from 'axios';
 
 function writeData(id,nameSave,link){
@@ -142,7 +142,7 @@ const createCard = (jobT,jobD,jobL) => {
 
 
     const auth = getAuth(app);
-    
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
