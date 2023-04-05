@@ -1,5 +1,7 @@
 import {app} from "../firebaseInitilization";
-import { getAuth,getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import axios from 'axios';
 
 function writeData(id,nameSave,link){
