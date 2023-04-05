@@ -51,7 +51,7 @@ window.register = function(){
       const user = userCredential.user;
       console.log(user.email);
       alert("Your account has been created. Welcome to InternXP!");
-      location.href = "/src/homePage/homePage";
+      location.href = "./src/homePage/homePage";
 
       
     })

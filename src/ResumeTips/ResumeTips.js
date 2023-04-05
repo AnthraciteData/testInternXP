@@ -141,6 +141,8 @@ const createCard = (jobT,jobD,jobL) => {
   saveB.addEventListener('click',function(event){
 
 
+    const auth = getAuth(app);
+    
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties

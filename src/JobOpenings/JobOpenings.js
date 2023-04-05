@@ -5,7 +5,7 @@ import { getDatabase, ref, set } from "firebase/database";
 
 import axios from 'axios';
 
-const auth = getAuth();
+// const auth = getAuth();
 
 
 
@@ -57,11 +57,11 @@ const auth = getAuth();
 //   }
 // };
 
-function writeData(id,nameSave,link){
+function writeData(nameSave,link){
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + id + "/" + nameSave ),  {url_ : link,priority : false,type_: "Job"});
+  set(ref(db,'savedList/' + "Purnima/" + nameSave ),  {url_ : link,priority : false,type_: "Job"});
 
 }
 
@@ -133,22 +133,23 @@ const createCard = (jobT,jobCN,jobD) => {
 
 
    
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        writeData(uid,jobT,jobCN);
-        console.log("should have worked");
+    // onAuthStateChanged(auth, (user) => {
+    //   if (user) {
+    //     // User is signed in, see docs for a list of available properties
+    //     // https://firebase.google.com/docs/reference/js/firebase.User
+    //     const uid = user.uid;
+    //     writeData(uid,jobT,jobCN);
+    //     console.log("should have worked");
 
     
-        // ...
-      } else {
-        console.log("Did not work");
-        // User is signed out
-        // ...
-      }
-    });
+    //     // ...
+    //   } else {
+    //     console.log("Did not work");
+    //     // User is signed out
+    //     // ...
+    //   }
+    // });
+    writeData(jobT,jobCN);
 
 
   })

@@ -10,7 +10,8 @@ module.exports = {
         homepageElements : "./homePage/homePageElements.js",
         JobOpeings : './JobOpenings/JobOpenings.js',
         LearningOpp : './LearningOpportunities/LearningOpportunities.js',
-        ResumeTips : './ResumeTips/ResumeTips.js'
+        ResumeTips : './ResumeTips/ResumeTips.js',
+        Internships : './Internships/internship.js'
     },
     output:{
 
