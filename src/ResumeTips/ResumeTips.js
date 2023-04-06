@@ -149,7 +149,7 @@ const createCard = (jobT,jobD,jobL) => {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
-        writeData(uid,jobT,jobLink);
+        writeData(uid,jobT,jobL);
         console.log("should have worked");
 
     
