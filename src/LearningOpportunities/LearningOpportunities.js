@@ -1,30 +1,45 @@
-// import {app} from "../firebaseInitilization";
-// import { getDatabase, ref, set } from "firebase/database";
+import {app} from "../firebaseInitilization";
+import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import axios from 'axios';
 
-// function writeData(nameSave,link){
+function writeData(id,nameSave,link){
 
-//   const db = getDatabase()
+  const db = getDatabase(app);
 
-//   set(ref(db,'savedList/' + nameSave),{
-//     url_ : link,
-//     priority : false 
+  const newNamesave = nameSave.isAL
 
-//   });
+  set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "leanringOpp"});
 
-// }
+}
 
 const coursesSearch = document.getElementById("coursesB");
 const networkSearch = document.getElementById("networkB");
 const work = document.getElementById("workB");
+const carDiv = document.getElementById("card-container");
 
 var options = null;
 
-let currentPage = 1;
+let currentPage = null;
+
+function clearBox(elementID) {
+  
+    
+  while(elementID.firstChild) {
+    elementID.removeChild(elementID.firstChild);
+  }
+}
 
 coursesSearch.addEventListener('click',function(){
 
+
+  if(carDiv.hasChildNodes()){
+    clearBox(carDiv);
+  }
+
   var coursesV = document.getElementById("courses").value;
+
+  currentPage = 1;
 
   options = {
     method: 'GET',
@@ -50,7 +65,13 @@ addCards(currentPage);
 })
 networkSearch.addEventListener('click',function(){
 
+  if(carDiv.hasChildNodes()){
+    clearBox(carDiv);
+  }
     var newtworkV = document.getElementById("network");
+
+    currentPage = 1;
+
     
     options = {
         method: 'GET',
@@ -67,7 +88,14 @@ networkSearch.addEventListener('click',function(){
 })
 work.addEventListener('click',function(){
 
+  if(carDiv.hasChildNodes()){
+    clearBox(carDiv);
+  }
+
     var workV = document.getElementById("work");
+
+    currentPage = 1;
+
 
     options = {
         method: 'GET',
@@ -132,12 +160,12 @@ const createCard = (jobT,jobD,jobL) => {
 
   const saveB = document.createElement("button");
 
-  card.addEventListener('click',function(event){
+  // card.addEventListener('click',function(event){
 
-    // console.log("i am in this bitch");
-    location.href = jobL;
+  //   // console.log("i am in this bitch");
+  //   location.href = jobL;
 
-  })
+  // })
 
   //////purnima should look here and add appropriate code
   /// this shoots information to where ever you want
@@ -145,7 +173,24 @@ const createCard = (jobT,jobD,jobL) => {
   saveB.addEventListener('click',function(event){
 
 
-    console.log("I am in this bii");
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        writeData(uid,jobT,jobL);
+        console.log("should have worked");
+
+    
+        // ...
+      } else {
+        console.log("Did not work");
+        // User is signed out
+        // ...
+      }
+    });
 
 
   })

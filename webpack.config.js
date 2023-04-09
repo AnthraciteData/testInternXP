@@ -11,7 +11,8 @@ module.exports = {
         JobOpeings : './JobOpenings/JobOpenings.js',
         LearningOpp : './LearningOpportunities/LearningOpportunities.js',
         ResumeTips : './ResumeTips/ResumeTips.js',
-        Internships : './Internships/internship.js'
+        Internships : './Internships/internship.js',
+        savedList : './savedList/savedList.js'
     },
     output:{
 
