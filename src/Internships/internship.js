@@ -126,9 +126,24 @@ const createCard = (jobT,jobCN,jobD) => {
 
   saveB.addEventListener('click',function(event){
 
+    const auth = getAuth(app);
 
-    writeData(jobT,jobCN);
-    console.log("should have worked");
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
+        writeData(uid,jobT,jobL);
+        console.log("should have worked");
+
+    
+        // ...
+      } else {
+        console.log("Did not work");
+        // User is signed out
+        // ...
+      }
+    });
 
 
   })

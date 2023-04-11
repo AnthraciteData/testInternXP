@@ -1,5 +1,5 @@
 import {app} from "../firebaseInitilization";
-import { getDatabase, ref, onValue, set } from "firebase/database";
+import { getDatabase, ref, onValue, set, remove} from "firebase/database";
 
 const db = getDatabase(app);
 
@@ -13,7 +13,7 @@ const cardContainer = document.getElementById("card-container");
 
 let updatePriority = (webName,pBool,link,webType) => {
 
-    console.log(webName);
+    // console.log(webName);
 
     const db = getDatabase(app);
 
@@ -55,8 +55,17 @@ let updatePriority = (webName,pBool,link,webType) => {
 
 // }
 
+let deleteItem = (webName) =>{
 
-let creatSaveitem = (typeEvent,nameEvent,priority,link) => {
+    let dataRemove = ref(db, 'savedList/' + 'eHFk7lApzqgYgXCUNjHm8Ra6EWE2/' + webName);
+
+    remove(dataRemove).then(() => {
+
+        console.log(webName + " was removed from data base");
+    });
+}
+
+let creatSaveitem = (typeEvent,nameEvent,priority,link,idN) => {
 
 
     const saveItem = document.createElement("div");
@@ -72,7 +81,7 @@ let creatSaveitem = (typeEvent,nameEvent,priority,link) => {
 
     saveItem.className = "saveItem";
 
-    // saveItem.id = idN;
+    saveItem.id = nameEvent;
 
     itemInfo.className = "itemInfo";
 
@@ -132,15 +141,17 @@ let creatSaveitem = (typeEvent,nameEvent,priority,link) => {
 
     saveItem.appendChild(itemPriority);
 
+    deleteB.addEventListener('click', () =>{
+
+        deleteItem(nameEvent);
+        cardContainer.removeChild(document.getElementById(nameEvent));
+        
+
+    })
+
     saveItem.appendChild(deleteB);
 
-    // deleteB.addEventListener('click', () =>{
-
-    //     cardContainer.removeChild(document.getElementById(idN));
-    //     console.log("damn")
-
-
-    // })
+   
     
 }
 
@@ -179,7 +190,8 @@ let addItems = () =>{
 
             
         }
-      });
+        
+      },{ onlyOnce: true });
 
 
 }

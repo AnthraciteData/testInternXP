@@ -7,7 +7,7 @@ function writeData(id,nameSave,link){
 
   const db = getDatabase(app);
 
-  const newNamesave = nameSave.isAL
+  // const newNamesave = nameSave.isAL 
 
   set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "leanringOpp"});
 
@@ -114,7 +114,6 @@ work.addEventListener('click',function(){
 })
 
 
-
  let axiosDataPromise = () => {
   // create a promise for the axios request
   const promise = axios.request(options);
@@ -133,7 +132,6 @@ const results = document.getElementById("results");
 var cardLimit = 100;
 const cardIncrease = 9;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
-// let currentPage = 1;
 
 var throttleTimer;
 const throttle = (callback, time) => {
@@ -284,34 +282,8 @@ const removeInfiniteScroll = () => {
   results.removeEventListener("scroll", handleInfiniteScroll);
 };
 
-// window.onload = function () {
 
 //   addCards(currentPage);
 // };
 
 results.addEventListener("scroll", handleInfiniteScroll);
-
-// for(let i = 0 ; i < 5 ; i++){
-//   console.log(name[i])
-// }
-
-// console.log(name.)
-// import axios from "axios";
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions',
-//   headers: {
-//     'X-RapidAPI-Key': 'f26fb09eb3msh3d4336d79d9cef6p1d60b9jsnf70a1205ee86',
-//     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-//   }
-// };
-
-// axios.request(options).then(function (response) {
-//   const dataLength = response.data.data.length;
-//   cardLimit = dataLength;
-// 	console.log(dataLength);
-// }).catch(function (error) {
-// 	console.error(error);
-// });
-	
