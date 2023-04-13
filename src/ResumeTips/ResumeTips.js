@@ -164,7 +164,6 @@ const createCard = (jobT,jobD,jobL) => {
 
   })
   const jobTitle = document.createElement("div");
-  // jobTitle.onclick = location.href = '../homePage/homePage.html';
   const jobDesc = document.createElement("p");
 
 
@@ -182,6 +181,9 @@ const createCard = (jobT,jobD,jobL) => {
   card.style.backgroundColor = getRandomColor();
   cardContainer.appendChild(card);
   card.appendChild(saveB);
+  jobTitle.addEventListener('click', () => {
+    location.href = jobL;
+  })
   card.appendChild(jobTitle);
   card.appendChild(jobDesc);
   

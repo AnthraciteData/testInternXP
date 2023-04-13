@@ -268,7 +268,7 @@ body{
 
 }
 
-.container .results #card-container .card .jobTitle{
+.container .results #card-container .card .itemInfo{
 
   border: 1px solid;
 
@@ -277,6 +277,8 @@ body{
   margin-bottom: 10%;
 
   text-align: center;
+
+  background: orange;
 
 
 
@@ -308,7 +310,7 @@ body{
 
 }
 
-.container .results #card-container .card .jobDescription{
+.container .results #card-container .card .itemDesc{
 
   margin-top: 1%;
 

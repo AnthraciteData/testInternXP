@@ -3,15 +3,15 @@ import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import axios from 'axios';
 
-function writeData(id,nameSave,link){
+
+let writeData = (id,nameSave,link) =>{
 
   const db = getDatabase(app);
 
-  // const newNamesave = nameSave.isAL 
-
   set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "leanringOpp"});
 
-}
+
+};
 
 const coursesSearch = document.getElementById("coursesB");
 const networkSearch = document.getElementById("networkB");
@@ -151,68 +151,62 @@ const getRandomColor = () => {
   return `hsl(${h}deg, 90%, 85%)`;
 };
 
-const createCard = (jobT,jobD,jobL) => {
+const createCard = (eventName,eventDesc,eventLink) => {
 
   
   const card = document.createElement("div");
 
   const saveB = document.createElement("button");
 
-  // card.addEventListener('click',function(event){
+  const itemInfo = document.createElement("button");
 
-  //   // console.log("i am in this bitch");
-  //   location.href = jobL;
-
-  // })
-
-  //////purnima should look here and add appropriate code
-  /// this shoots information to where ever you want
-
-  saveB.addEventListener('click',function(event){
-
-
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        const uid = user.uid;
-        writeData(uid,jobT,jobL);
-        console.log("should have worked");
-
-    
-        // ...
-      } else {
-        console.log("Did not work");
-        // User is signed out
-        // ...
-      }
-    });
-
-
-  })
-  const jobTitle = document.createElement("div");
-  // jobTitle.onclick = location.href = '../homePage/homePage.html';
-  const jobDesc = document.createElement("p");
-
-
+  const itemDesc = document.createElement("p");
 
   card.className = "card";
-  jobTitle.className = "jobTitle";
-  jobDesc.className = "jobDescription";
-
+  itemInfo.className = "itemInfo";
+  itemDesc.className = "itemDesc";
   saveB.className = "saveB";
 
   saveB.innerHTML = "Save";
-  jobTitle.innerHTML = jobT;
-  jobDesc.innerHTML = jobD;
+  itemInfo.innerHTML = eventName;
+  itemDesc.innerHTML = eventDesc;
 
   card.style.backgroundColor = getRandomColor();
+
   cardContainer.appendChild(card);
+
+  saveB.addEventListener('click', () =>{
+
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth,(user) =>{
+
+      if (user) {
+        
+        const uid = user.uid;
+        writeData(uid,eventName,eventLink);
+        console.log("should have worked");
+
+    
+      } else {
+        console.log("Did not work");
+       
+      }
+    })
+
+
+  })
+
   card.appendChild(saveB);
-  card.appendChild(jobTitle);
-  card.appendChild(jobDesc);
+
+  itemInfo.addEventListener('click',() =>{
+
+    location.href = eventLink;
+
+
+  })
+  card.appendChild(itemInfo);
+  card.appendChild(itemDesc);
   
 
 

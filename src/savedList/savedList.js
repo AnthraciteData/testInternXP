@@ -72,7 +72,7 @@ let creatSaveitem = (typeEvent,nameEvent,priority,link,idN) => {
 
     const itemInfo = document.createElement("div");
 
-    const itemName = document.createElement("div");
+    const itemName = document.createElement("buton");
 
     const itemPriority = document.createElement("button");
 
@@ -136,6 +136,11 @@ let creatSaveitem = (typeEvent,nameEvent,priority,link,idN) => {
     cardContainer.appendChild(saveItem);
 
     saveItem.appendChild(itemInfo);
+
+    itemName.addEventListener('click', () =>{
+
+        location.href = link;
+    })
     
     saveItem.appendChild(itemName);
 

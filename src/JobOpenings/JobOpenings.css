@@ -94,7 +94,7 @@ body{
   
   }
 
-  .container .inputs .fname{
+  .container .inputs .search{
 
     border: 2px solid;
     background: grey;
@@ -104,14 +104,14 @@ body{
     border-radius: 25px;
     padding: 10px;
   }
-  .container .inputs .fname:hover{
+  .container .inputs .search:hover{
 
 
     background-color: lightblue;
 
   }
 
-  .container .inputs .lname{
+  .container .inputs .userIn{
 
     border: 2px solid;
     background: grey;
@@ -123,33 +123,33 @@ body{
 
 
   }
-  .container .inputs #fname{
+  .container .inputs #search{
 
     border-radius: 25px;
     padding: 10px;
   }
-  .container .inputs #lname{
+  .container .inputs #userIn{
 
     border-radius: 25px;
 
 
   }
-  .container .inputs #fname:focus{
+  .container .inputs #search:focus{
 
     background-color: lightblue;
 
-  }.container .inputs #fname:hover{
-
-    background-color: lightblue;
-
-  }
-
-  .container .inputs #lname:focus{
+  }.container .inputs #search:hover{
 
     background-color: lightblue;
 
   }
-  .container .inputs #lname:hover{
+
+  .container .inputs #userIn:focus{
+
+    background-color: lightblue;
+
+  }
+  .container .inputs #userIn:hover{
 
     background-color: lightblue;
 
@@ -243,6 +243,11 @@ body{
 
   text-align: center;
 
+  background: red;
+
+margin-left: 35%;
+margin-right: 25%;
+margin-bottom: 4%;
 
 
 

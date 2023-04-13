@@ -47,27 +47,68 @@ import axios from 'axios';
 //   }
 // };
 
-function writeData(nameSave,link){
+
+
+const search = document.getElementById("search");
+const carDiv = document.getElementById("card-container");
+
+
+let clearbox = (elementID) =>{
+
+  while(elementID.firstChild) {
+    elementID.removeChild(elementID.firstChild);
+  }
+
+};
+
+
+
+var options = null;
+
+let currentPage = null;
+
+search.addEventListener('click', () => {
+
+  if(carDiv.hasChildNodes()){
+
+    clearbox(carDiv);
+  }
+
+  var userIn = document.getElementById("userIn").value;
+
+  currentPage = 1;
+
+
+  options = {
+      method: 'GET',
+      url: 'https://jsearch.p.rapidapi.com/search',
+      params: {query: userIn, page: '10', num_pages: '10',employment_types: 'INTERN'},
+      headers: {
+        'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
+        'X-RapidAPI-Host': 'jsearch.p.rapidapi.com'
+      }  
+    };
+
+  var userIn = document.getElementById("userIn").value = "";
+
+
+
+    addCards(currentPage);
+
+
+
+
+})
+
+
+
+let writeData = (id,nameSave,link) => {
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + nameSave),{
-    url_ : link,
-    priority : false,
-    type_: "Job"
+  set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "Intern"});
 
-  });
-
-}
-
-  const options = {
-    method: 'GET',
-    url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions',
-    headers: {
-      'X-RapidAPI-Key': 'f26fb09eb3msh3d4336d79d9cef6p1d60b9jsnf70a1205ee86',
-      'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-    }
-  };
+};
 
  let axiosDataPromise = () => {
   // create a promise for the axios request
@@ -87,7 +128,6 @@ const results = document.getElementById("results");
 var cardLimit = 100;
 const cardIncrease = 9;
 const pageCount = Math.ceil(cardLimit / cardIncrease);
-let currentPage = 1;
 
 var throttleTimer;
 const throttle = (callback, time) => {
@@ -107,23 +147,32 @@ const getRandomColor = () => {
   return `hsl(${h}deg, 90%, 85%)`;
 };
 
-const createCard = (jobT,jobCN,jobD) => {
+const createCard = (jobT,jobCN,jobD,jobL) => {
 
   
   const card = document.createElement("div");
 
   const saveB = document.createElement("button");
 
-  // card.addEventListener('click',function(event){
+  
+  const jobTitle = document.createElement("button");
+  const jobCLocation = document.createElement("div");
+  const jobDesc = document.createElement("p");
 
-  //   // console.log("i am in this bitch");
-  //   location.href = jobLink;
 
-  // })
+  card.className = "card";
+  jobTitle.className = "jobTitle";
+  jobCLocation.className = "jobCLocation";
+  jobDesc.className = "jobDescription";
+  saveB.className = "saveB";
 
-  //////purnima should look here and add appropriate code
-  /// this shoots information to where ever you want
+  saveB.innerHTML = "Save";
+  jobTitle.innerHTML = jobT;
+  jobCLocation.innerHTML = jobCN;
+  jobDesc.innerHTML = jobD;
 
+  card.style.backgroundColor = getRandomColor();
+  cardContainer.appendChild(card);
   saveB.addEventListener('click',function(event){
 
     const auth = getAuth(app);
@@ -147,26 +196,11 @@ const createCard = (jobT,jobCN,jobD) => {
 
 
   })
-  const jobTitle = document.createElement("div");
-  // jobTitle.onclick = location.href = '../homePage/homePage.html';
-  const jobCLocation = document.createElement("div");
-  const jobDesc = document.createElement("p");
-
-
-  card.className = "card";
-  jobTitle.className = "jobTitle";
-  jobCLocation.className = "jobCLocation";
-  jobDesc.className = "jobDescription";
-  saveB.className = "saveB";
-
-  saveB.innerHTML = "Save";
-  jobTitle.innerHTML = jobT;
-  jobCLocation.innerHTML = jobCN;
-  jobDesc.innerHTML = jobD;
-
-  card.style.backgroundColor = getRandomColor();
-  cardContainer.appendChild(card);
   card.appendChild(saveB);
+
+  jobTitle.addEventListener('click', () => {
+    location.href = jobL;
+  })
   card.appendChild(jobTitle);
   card.appendChild(jobCLocation);
   card.appendChild(jobDesc);
@@ -196,9 +230,9 @@ const addCards = (pageIndex) => {
     for(let i = startRange ; i <endRange ;i++){
       console.log(i);
 
-      createCard(data[i]["name"],data[i]["country"],data[i]["id"]);
+      // createCard(data[i]["name"],data[i]["country"],data[i]["id"]);
 
-      // createCard(data[i]["job_title"],data[i]["employer_name"],data[i]["job_description"],data[i]["job_apply_link"]);
+      createCard(data[i]["job_title"],data[i]["employer_name"],data[i]["job_description"],data[i]["job_apply_link"]);
 
     }
 

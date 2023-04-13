@@ -175,6 +175,7 @@ body{
     border-radius: 10px;
     background: #172664;
     color: white;
+    overflow: scroll;
 
     
 
