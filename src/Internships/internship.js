@@ -1,5 +1,7 @@
 import {app} from "../firebaseInitilization";
 import { getDatabase, ref, set } from "firebase/database";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 
 import axios from 'axios';
 
