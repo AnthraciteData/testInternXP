@@ -1,7 +1,6 @@
 import {app} from "../firebaseInitilization";
 import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
-
 import axios from 'axios';
 
 function writeData(id,nameSave,link){
@@ -15,57 +14,29 @@ function writeData(id,nameSave,link){
 // const coursesSearch = document.getElementById("coursesB");
 // const networkSearch = document.getElementById("networkB");
 const work = document.getElementById("resumeB");
+const carDiv = document.getElementById("card-container");
 
 var options = null;
 
-let currentPage = 1;
+var currentPage = null;
 
-// coursesSearch.addEventListener('click',function(){
-
-//   var coursesV = document.getElementById("courses").value;
-
-//   options = {
-//     method: 'GET',
-//     url: 'https://duckduckgo8.p.rapidapi.com/',
-//     params: {q: coursesV + " Courses Opportunities"},
-//     headers: {
-//       'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
-//       'X-RapidAPI-Host': 'duckduckgo8.p.rapidapi.com'
-//     }
-// };
-// coursesV = document.getElementById("courses").value = "";
-// addCards(currentPage);
+function clearBox(elementID) {
   
-//   //  options = {
-//   //   method: 'GET',
-//   //   url: 'https://wft-geo-db.p.rapidapi.com/v1/geo/adminDivisions',
-//   //   headers: {
-//   //     'X-RapidAPI-Key': 'f26fb09eb3msh3d4336d79d9cef6p1d60b9jsnf70a1205ee86',
-//   //     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
-//   //   }
-//   // };
-
-// })
-// networkSearch.addEventListener('click',function(){
-
-//     var newtworkV = document.getElementById("network");
     
-//     options = {
-//         method: 'GET',
-//         url: 'https://duckduckgo8.p.rapidapi.com/',
-//         params: {q: newtworkV + "Networking Opportunities"},
-//         headers: {
-//           'X-RapidAPI-Key': '085c20be10msh19564d51aa377d0p1fe714jsn929d074bae6c',
-//           'X-RapidAPI-Host': 'duckduckgo8.p.rapidapi.com'
-//         }
-//     };
+  while(elementID.firstChild) {
+    elementID.removeChild(elementID.firstChild);
+  }
+}
 
-//     newtworkV = document.getElementById("network").value = "";
-//     addCards(currentPage);
-// })
 work.addEventListener('click',function(){
 
+  if(carDiv.hasChildNodes()){
+    clearBox(carDiv);
+  }
+
     var workV = document.getElementById("resume");
+
+    currentPage = 1;
 
     options = {
         method: 'GET',
@@ -220,7 +191,7 @@ const addCards = (pageIndex) => {
 
       // console.log(data[1]["name"]);
   })
-  .catch(err => console.log(err))
+  .catch(err => console.log(err + "this is the issue that needs to be fixec"))
 
   if(cardLimit <= cardIncrease){
 

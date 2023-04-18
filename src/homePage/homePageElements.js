@@ -35,6 +35,12 @@ window.learningOpp = function(){
   location.href = '../LearningOpportunities/LearningOpportunities'
 
 }
+
+window.internOpp = function (){
+
+  location.href = '../Internships/internship.html'
+
+}
 window.resumeT = function(){
     location.href = '../ResumeTips/ResumeTips.html'
 }
