@@ -30,6 +30,11 @@ window.jobOpp = function (){
     location.href = '../JobOpenings/JobOpenings';
 
 }
+window.learningOpp = function(){
+
+  location.href = '../LearningOpportunities/LearningOpportunities'
+
+}
 window.resumeT = function(){
     location.href = '../ResumeTips/ResumeTips.html'
 }
