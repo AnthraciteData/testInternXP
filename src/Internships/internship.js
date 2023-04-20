@@ -54,6 +54,14 @@ import axios from 'axios';
 const search = document.getElementById("search");
 const carDiv = document.getElementById("card-container");
 
+let varCheck = (namedSave) =>{
+
+  const regex = /[^a-zA-Z ]/g
+
+  return nameSave.replace(regex," ")
+
+}
+
 
 let clearbox = (elementID) =>{
 

@@ -3,13 +3,22 @@ import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import axios from 'axios';
 
+let varCheck = (namedSave) =>{
+
+  const regex = /[^a-zA-Z ]/g
+
+  return namedSave.replace(regex," ")
+
+}
+
 function writeData(id,nameSave,link){
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + id + "/" + nameSave ),  {url_ : link,priority : false,type_: "resumeTip"});
+  set(ref(db,'savedList/' + id + "/" + varCheck(nameSave) ),  {url_ : link,priority : false,type_: "resumeTip"});
 
 }
+
 
 // const coursesSearch = document.getElementById("coursesB");
 // const networkSearch = document.getElementById("networkB");
