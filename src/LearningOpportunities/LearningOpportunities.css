@@ -257,6 +257,8 @@ body{
     margin: 8px;
     border-radius: 3px;
     transition: all 200ms ease-in-out;
+    background: lightblue;
+
     /* position: relative; */
     
 
@@ -270,21 +272,19 @@ body{
 
 .container .results #card-container .card .itemInfo{
 
-  border: 1px solid;
-
+  border: 2px solid;
+  border-radius: 10%;
   margin-top: 10%;
-
   margin-bottom: 10%;
-
   text-align: center;
-
-  background: orange;
-
   margin-left: 20%;
   margin-right: 20%;
+  background: #172664;
+  color: #eaeaea;
+}
+.container .results #card-container .card .itemInfo:hover{
 
-
-
+  box-shadow: 0 0px 50px #172664;
 
 }
 /* .container .results #card-container .card .jobCLocation{
@@ -300,29 +300,35 @@ body{
 } */
 .container .results #card-container .card .saveB{
 
-  border: none;
+  border: 2px solid;
   background-color: transparent;
-  margin-left: 90%;
-  
-  color:  #172664;
+  margin-left: 88%;
+  margin-top: 1%;
+  /* margin-right: 9%; */
+  color:  white;
+  background: #172664;
+  border-radius: 10%;
+  /* flex-wrap: wrap; */
+  width: fit-content;
 }
 
 .container .results #card-container .card .saveB:hover{
 
-  box-shadow: 0 4px 10px yellow;
+  box-shadow: 0 0 30px #172664;
 
 }
 
 .container .results #card-container .card .itemDesc{
 
-  margin-top: 1%;
-
-  border: 1px solid red;
   overflow: scroll;
   overflow-wrap: anywhere;
   max-height: 66%;
-    /* word-wrap: break-word; */
-  /* hyphens: auto; */
+  color: white;
+  background: #172664;
+  text-align: center;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 2%;
 
 
 

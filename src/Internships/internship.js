@@ -58,7 +58,7 @@ let varCheck = (namedSave) =>{
 
   const regex = /[^a-zA-Z ]/g
 
-  return nameSave.replace(regex," ")
+  return namedSave.replace(regex," ")
 
 }
 
@@ -116,7 +116,7 @@ let writeData = (id,nameSave,link) => {
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "Intern"});
+  set(ref(db,'savedList/' + id + "/" + varCheck(nameSave) ),  {url_ : link,priority : false,type_: "Intern"});
 
 };
 
@@ -162,10 +162,10 @@ const createCard = (jobT,jobCN,jobD,jobL) => {
   
   const card = document.createElement("div");
 
-  const saveB = document.createElement("button");
+  const saveB = document.createElement("div");
 
   
-  const jobTitle = document.createElement("button");
+  const jobTitle = document.createElement("div");
   const jobCLocation = document.createElement("div");
   const jobDesc = document.createElement("p");
 

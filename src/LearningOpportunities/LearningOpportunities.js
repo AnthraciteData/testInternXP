@@ -3,12 +3,18 @@ import { getDatabase, ref, set } from "firebase/database";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import axios from 'axios';
 
+let varCheck = (namedSave) =>{
 
+  const regex = /[^a-zA-Z ]/g
+
+  return namedSave.replace(regex," ")
+
+}
 let writeData = (id,nameSave,link) =>{
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "leanringOpp"});
+  set(ref(db,'savedList/' + id + "/" + varCheck(nameSave) ),  {url_ : link,priority : false,type_: "leanringOpp"});
 
 
 };
@@ -156,9 +162,9 @@ const createCard = (eventName,eventDesc,eventLink) => {
   
   const card = document.createElement("div");
 
-  const saveB = document.createElement("button");
+  const saveB = document.createElement("div");
 
-  const itemInfo = document.createElement("button");
+  const itemInfo = document.createElement("div");
 
   const itemDesc = document.createElement("p");
 
@@ -171,7 +177,6 @@ const createCard = (eventName,eventDesc,eventLink) => {
   itemInfo.innerHTML = eventName;
   itemDesc.innerHTML = eventDesc;
 
-  card.style.backgroundColor = getRandomColor();
 
   cardContainer.appendChild(card);
 

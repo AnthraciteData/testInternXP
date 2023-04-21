@@ -51,6 +51,13 @@ import axios from 'axios';
 const search = document.getElementById("search");
 const carDiv = document.getElementById("card-container");
 
+let varCheck = (namedSave) =>{
+
+  const regex = /[^a-zA-Z ]/g
+
+  return namedSave.replace(regex," ")
+
+;}
 
 let clearbox = (elementID) =>{
 
@@ -105,7 +112,7 @@ let writeData = (id,nameSave,link) => {
 
   const db = getDatabase(app);
 
-  set(ref(db,'savedList/' + id + "/" + nameSave),  {url_ : link,priority : false,type_: "Job"});
+  set(ref(db,'savedList/' + id + "/" + varCheck(nameSave)),  {url_ : link,priority : false,type_: "Job"});
 
 };
 
@@ -162,8 +169,8 @@ const createCard = (jobT,jobCN,jobD,jobL) => {
 
   
   const card = document.createElement("div");
-  const saveB = document.createElement("button");
-  const jobTitle = document.createElement("button");
+  const saveB = document.createElement("div");
+  const jobTitle = document.createElement("div");
   const jobCLocation = document.createElement("div");
   const jobDesc = document.createElement("p");
 
@@ -179,7 +186,7 @@ const createCard = (jobT,jobCN,jobD,jobL) => {
   jobCLocation.innerHTML = jobCN;
   jobDesc.innerHTML = jobD;
 
-  card.style.backgroundColor = getRandomColor();
+  // card.style.backgroundColor = getRandomColor();
   cardContainer.appendChild(card);
 
   saveB.addEventListener('click',function(event){

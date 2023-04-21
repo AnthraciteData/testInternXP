@@ -75,6 +75,7 @@ body{
 
   /* border: 5px solid; */
   width: 20%;
+  margin-left: 1%;
   /* background: orangered; */
   height: 76.8vh;
   border-radius: 25px;
@@ -102,7 +103,7 @@ body{
     align-content: end;
     margin-left: 8%;
     border-radius: 25px;
-    padding: 10px;
+    padding: 1%;
   }
   .container .inputs .search:hover{
 
@@ -189,6 +190,7 @@ body{
   .container .results{
 
     width: 80%;
+    margin-right: 1%;
 
     border: 5px solid;
 
@@ -222,6 +224,7 @@ body{
     margin: 8px;
     border-radius: 3px;
     transition: all 200ms ease-in-out;
+    background: #172664;
 
     /* position: relative; */
     
@@ -236,59 +239,72 @@ body{
 
 .container .results #card-container .card .jobTitle{
 
-  border: 1px solid;
-
+  border: 2px solid;
+  border-radius: 10%;
   margin-top: 10%;
-
   margin-bottom: 10%;
-
   text-align: center;
-  
-  align-self: center;
+  margin-left: 33%;
+  margin-right: 30%;
+  background: #172664;
+  color: #eaeaea;
+  word-wrap: break-word;
+}
+.container .results #card-container .card .jobTitle:hover{
 
-  margin-left: 20%;
-  margin-right: 20%;
+  box-shadow: 0 0px 50px #172664;
 
 }
+
+
 .container .results #card-container .card .jobCLocation{
 
   border: 1px solid;
 
-  margin-top: 1%;
-
   margin-bottom: 0%;
 
   text-align: center;
+  border-radius: 10%;
+  background: #172664;
+  margin-left: 1%;
+  margin-right: 1%;
+  color: white;
 
 
 
 }
 .container .results #card-container .card .saveB{
 
-  border: none;
+  border: 2px solid;
   background-color: transparent;
-  margin-left: 90%;
-  
-  color:  #172664;
+  margin-left: 88%;
+  margin-top: 1%;
+  /* margin-right: 9%; */
+  color:  white;
+  background: #172664;
+  border-radius: 10%;
+  /* flex-wrap: wrap; */
+  width: fit-content;
 }
 
 .container .results #card-container .card .saveB:hover{
 
-  box-shadow: 0 4px 10px yellow;
+  box-shadow: 0 0 30px #172664;
 
 }
 
 .container .results #card-container .card .jobDescription{
 
   margin-top: 1%;
-
-  border: 1px solid red;
   overflow: scroll;
   overflow-wrap: anywhere;
-  max-height: 66%;
-    /* word-wrap: break-word; */
-  /* hyphens: auto; */
-
+  max-height: 40%;
+  color: white;
+  background: #172664;
+  text-align: center;
+  margin-left: 1%;
+  margin-right: 1%;
+  border-radius: 2%;
 
 
 }

@@ -108,7 +108,7 @@ const createCard = (jobT,jobD,jobL) => {
   
   const card = document.createElement("div");
 
-  const saveB = document.createElement("button");
+  const saveB = document.createElement("div");
 
   // card.addEventListener('click',function(event){
 
@@ -158,7 +158,7 @@ const createCard = (jobT,jobD,jobL) => {
   jobTitle.innerHTML = jobT;
   jobDesc.innerHTML = jobD;
 
-  card.style.backgroundColor = getRandomColor();
+  // card.style.backgroundColor = getRandomColor();
   cardContainer.appendChild(card);
   card.appendChild(saveB);
   jobTitle.addEventListener('click', () => {
